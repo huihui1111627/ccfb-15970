@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "imgpipe"
+version = "0.1.0"
+description = "图像处理流水线的融合/分块编译执行引擎 (仿真)"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.22", "scipy>=1.9"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+imgpipe-report = "imgpipe.report:main"
+imgpipe-serve = "imgpipe.serve:main"
+imgpipe-calibrate = "imgpipe.calibrate:calibrate"
+
+[tool.setuptools]
+packages = ["imgpipe"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
